@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using System.Globalization;
 
 namespace ShapesSquare
 {
@@ -27,7 +28,7 @@ namespace ShapesSquare
             if (string.IsNullOrEmpty(userData))
                 return (new double[]{});
             //Replace dots with commas so that there are no problems with parsing && Trim Spaces
-            userData = trimmer.Replace(userData.Replace(',', '.').Trim(), " ");
+            userData = trimmer.Replace(userData.Replace('.', ',').Trim(), " ");
             var numsList = new List<double>();
             //Separate numbers
             var userDataSplitted = userData.Split(' ');
